@@ -13,21 +13,17 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
 async def on_ready():
 print ("Ready")
 
 
-@bot.command(pass_context=True)
+@bot.command()
 async def join(ctx):
 author = ctx.message.author
 channel = author.voice_channel
-await bot.join_voice_channel(channel)
+    await bot.join_voice_channel(channel)
 
-    
+
 @client.event
 async def on_message(message):
     if message.content == ".mute":
