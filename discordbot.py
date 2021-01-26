@@ -4,7 +4,7 @@ from discord.ext.commands import Bot
 from discord.voice_client import VoiceClient
 import asyncio
 
-bot = commands.Bot(command_prefix="|")
+bot = commands.Bot(command_prefix="/")
 client = discord.Client()
 
 async def on_ready():
