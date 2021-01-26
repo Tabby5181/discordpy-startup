@@ -4,6 +4,7 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+client = discord.Client()
 
 
 @bot.event
@@ -18,9 +19,13 @@ print ("Ready")
 
 
 @bot.command()
-async def (ctx):
+async def ping(ctx):
+    await ctx.send('pong')
+
+@bot.command(pass_context=True)
+async def join(ctx):
 author = ctx.message.author
 channel = author.voice_channel
-    await bot.join_voice_channel(channel)
+await bot.join_voice_channel(channel)
 
 bot.run(token)
