@@ -6,7 +6,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix="/")
 client = discord.Client()
-TOKEN = 'ODAzNzAwOTI5Mjk4OTU2Mjg4.YBBm0Q.VVNNVTnfZGNRrytlbpW0v3QNdVc'
+TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
 async def on_ready():
