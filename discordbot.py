@@ -18,21 +18,9 @@ print ("Ready")
 
 
 @bot.command()
-async def join(ctx):
+async def (ctx):
 author = ctx.message.author
 channel = author.voice_channel
     await bot.join_voice_channel(channel)
-
-
-@client.event
-async def on_message(message):
-    if message.content == ".mute":
-        if message.author.guild_permissions.administrator:
-            bot_vc = message.guild.me.voice.channel # botのいるボイスチャンネルを取得
-            for member in bot_vc.members:
-                await member.edit(mute=True) # チャンネルの各参加者をミュートする
-        else:
-            await message.channel.send("実行できません。")
-
 
 bot.run(token)
